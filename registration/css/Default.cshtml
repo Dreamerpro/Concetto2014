@@ -1,0 +1,17 @@
+﻿@{
+    var db=Database.Open("registration");
+    var query="SELECT * FROM registration_list";
+    var webGrid=new WebGrid(db.Query(query));
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        @webGrid.GetHtml();
+    </body>
+</html>

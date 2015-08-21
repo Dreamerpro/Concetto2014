@@ -1,0 +1,243 @@
+﻿@{
+    var r=new Random();
+    var randomNo=r.Next(99999)+1000;
+
+    var db=Database.Open("registration");
+    
+    var name="";
+    var college="";
+    var email="";
+    var phone="";
+    var gender="";
+    var department="";
+    var city="";
+    var state="";
+    var code="";
+    var rnr="";
+    var dob="";
+
+    var time="";
+    var state_error="";
+    var year_error="";
+
+    Validation.RequireField("name", "Name is required");
+    Validation.RequireField("college", "College Name is required");
+    Validation.Add("email", Validator.Required("email is required"),Validator.Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$","Invalid Email address"));
+    Validation.Add("phone", Validator.Required("mobile no. is required"),Validator.StringLength(10,10,"Must a 10 digit number"));
+    Validation.RequireField("gender", "Gender is required");
+    Validation.RequireField("department", "Department is required");
+    Validation.RequireField("city", "City is required");
+    Validation.RequireField("dob", "Date of Birth is required");
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Concetto 2014 Registration</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="css/registration.css" rel="stylesheet" type="text/css" />
+        
+        <style>
+            
+           
+        </style>
+    </head>
+    <body>
+     <div class="container">
+         @if(IsPost && Validation.IsValid() ){
+            name=Request.Form["name"];
+            college=Request.Form["college"];
+            email=Request.Form["email"];
+            phone=Request.Form["phone"];
+            gender=Request.Form["gender"];
+            department=Request.Form["department"];
+            state=Request.Form["state"];
+            city=Request.Form["city"];
+           
+        
+            if(true){
+                 var query="INSERT INTO registration_list(Name, College, Email, Phone, Gender, Department, State, City, Time) VALUES (@0, @1, @2, @3,@4,@5, @6, @7, @8)";
+                 db.Execute(query, name, college, email, phone, gender, department, state, city, @DateTime.Now);
+                 <h1 style="text-align: center; margin-top: 100px">Registration Succesfull</h1>
+                <div id="tomainsite"><a href="#" onclick="">Return To Site</a></div-->
+                }
+             
+            }
+         else if(IsPost && !Validation.IsValid())
+          {
+              
+              <fieldset>
+         <legend><h1>Registration Form</h1></legend>
+        <form id="register" method="post">
+            <h1>Please correct the wrong field(s)</h1>
+            <ul class="form_list" id="left">
+             <li><label for="name">Name</label><br/><input id="name" type="text" name="name" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("name")</span></li>
+             <li><label for="email">Email</label><br/><input id="email" type="email" name="email" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("email")</span></li>
+             <li><label for="number">Phone No.</label><br/><input id="number" type="number" name="phone" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("phone")</span></li>
+             <li><label for="gender">Gender</label><br/><input type="text" name="gender" id="gender" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("gender")</span></li>
+           
+                 </ul>
+            <ul class="form_list" id="middle">
+            <li><label for="dob">Date Of Birth</label><br/><input type="text" id="dob"  name="dob" placeholder="(dd/mm/yyyy)"></input><br/><span class="validation-message">@Html.ValidationMessage("dob")</span></li>
+             
+            <li><label for="department">Department</label><br/><input type="text" name="department"  id="department" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("department")</span></li>
+            <li><label for="year">Year</label><br/>
+                <select id="year" name="year"><!--Add to database-->
+                <option value="yr">Year</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+
+            </select><!--Add to database-->
+                 <br/><span class="validation-message">@year_error</span>
+            </li>
+               <li><label for="college">Institution</label><br/><input type="text" name="college" id="college" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("college")</span></li>
+                     
+                 </ul>
+            
+            <ul class="form_list" id="right_ul" style="float: right">
+
+          
+
+
+            <li><label for="city">City</label><br/><input type="text" id="city" name="city" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("city")</span></li>
+            <li><label for="state">State</label><br/>
+                <select name="state" id="state">
+                <option value="state">State</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Goa">Goa</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Orissa">Orissa</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Assam">Assam</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="other">other</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Sikkim">Sikkim</option>
+
+            </select>
+            <br/><span class="validation-message">@state_error</span>
+            </li>
+               <li><span>[All fields are mandatory]</span></li>
+            <li><input type="submit" value="Submit"></input></li>
+            
+            </ul>
+        </form>
+         </fieldset>  
+                }
+                else{
+                        <fieldset>
+         <legend><h1>Registration Form</h1></legend>
+        <form id="register" method="post">
+           <ul class="form_list" id="left">
+             <li><label for="name">Name</label><br/><input id="name" type="text" name="name" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("name")</span></li>
+             <li><label for="email">Email</label><br/><input id="email" type="email" name="email" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("email")</span></li>
+             <li><label for="number">Phone No.</label><br/><input id="number" type="number" name="phone" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("phone")</span></li>
+             <li><label for="gender">Gender</label><br/><input type="text" name="gender" id="gender" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("gender")</span></li>
+           
+                 </ul>
+            <ul class="form_list" id="middle">
+            <li><label for="dob">Date Of Birth</label><br/><input type="text" id="dob"  name="dob" placeholder="(dd/mm/yyyy)"></input><br/><span class="validation-message">@Html.ValidationMessage("dob")</span></li>
+             
+            <li><label for="department">Department</label><br/><input type="text" name="department"  id="department" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("department")</span></li>
+            <li><label for="year">Year</label><br/>
+                <select id="year" name="year"><!--Add to database-->
+                <option value="yr">Year</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+
+            </select><!--Add to database-->
+                 <br/><span class="validation-message">@year_error</span>
+            </li>
+               <li><label for="college">Institution</label><br/><input type="text" name="college" id="college" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("college")</span></li>
+                     
+                 </ul>
+            
+            <ul class="form_list" id="right_ul" style="float: right">
+
+          
+
+
+            <li><label for="city">City</label><br/><input type="text" id="city" name="city" placeholder=""></input><br/><span class="validation-message">@Html.ValidationMessage("city")</span></li>
+            <li><label for="state">State</label><br/><select name="state" id="state">
+                <option value="state">State</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Goa">Goa</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Orissa">Orissa</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Assam">Assam</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="other">other</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Sikkim">Sikkim</option>
+
+            </select>
+            <br/><span class="validation-message">@state_error</span>
+            </li>
+               <li><span>[All fields are mandatory]</span></li>
+            <li><input type="submit" value="Submit"></input></li>
+            
+            </ul>
+        </form>
+         </fieldset>  
+                }
+        
+          
+        
+       
+     
+     </div>
+    </body>
+</html>

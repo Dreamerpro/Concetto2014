@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Concetto 2014 | Gallery</title>
+<script src="js/jquery-1.9.1.js"></script>
+</head>
+<style>
+*{
+margin:0;
+overflow-y:hidden;
+}
+#show{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+size:auto;
+z-index:-1;
+-webkit-filter:0;
+}
+#overlay{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+size:auto;
+z-index:0;
+-webkit-filter:0;
+background-color:#333;
+background-position:left;
+background-repeat:repeat-x;
+opacity:0.4;
+display:none;
+}
+#handler{
+width: 260px;
+height: 60px;
+background-color:#000;
+border:1px solid #CCC;
+opacity:0.6;
+background-size:contain;
+background-repeat:no-repeat;
+text-align:center;
+color:#FFF;
+cursor:pointer;
+}
+#handler>h2{
+margin-top:10px;
+
+}
+
+.image_all{
+z-index:100;
+position:absolute;
+display:none;
+background-color:#333;
+/*left:calc(-100%);*/
+}
+.image_list>li{
+width:200px;
+height:150px;
+size:auto;
+display:inline-block;
+cursor:pointer;
+}
+.image_list>li>img{
+width:200px;
+height:150px;
+size:auto;
+}
+</style>
+<script>
+$(document).ready(function(e) {
+	for(var z=0;z<10;z++){
+				var list=document.createElement("li");
+				var img =document.createElement("img");
+				var itemno=3760+z;
+				img.setAttribute("src","image/gallery/DSC_"+itemno+".JPG");
+				list.appendChild(img);
+				$("#img_ul").append(list);
+	}
+	$("#handler").click(function(e) {
+        $(".image_all").slideToggle();
+			$("#overlay").toggle();
+	
+    });
+	$(".image_list>li>img").click(function(e) {
+        var img_link=$(this).attr("src");
+		$("#show").attr("src",img_link);
+		$("#handler").click();
+    });
+	
+});
+</script>
+
+
+<body>
+<img id="show" src="image/194787_425231477534372_614565597_o.jpg" />
+<div id="overlay" ></div>
+<div id="handler"><h2>Gallery</h2></div>
+
+<div class="image_all">
+<ul class="image_list" id="img_ul">
+<li><img alt="image" src="image/335503_425232224200964_344456175_o.jpg"/></li>
+
+</ul>
+</div>
+
+</body>
+</html>

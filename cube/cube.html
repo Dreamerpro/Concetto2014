@@ -1,0 +1,952 @@
+﻿
+<div id="loader" style="z-index:400">
+<div id="se"><div id="nwi"><div id="tam"></div></div></div>
+<br />
+</div>
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
+    <div id="wrapper1"><h1><u>EVENTS</u></h1>
+    <div class="cube_holder" style="direction: ltr; text-align: center ; margin-top: 100px;">
+
+        
+        <div id="cube1" class="wrap">
+            <div class="cube">
+                <div class="front"> <img src="images/img.png" title="robotics" alt="robotics" class="thumb"></div>
+                <div class="back"><img src="images/img2.png" title="codica" alt="codica" class="thumb"></div>
+                <div class="top"><img src="images/img3.png" title="gaming" alt="gaming" class="thumb"> </div>
+                <div class="bottom"><img src="images/img4.png" title="quiz" alt="quiz" class="thumb"> </div>
+                <div class="left"><img src="images/simulazione.png" title="simulazione" alt="simulazione" class="thumb"></div>
+                <div class="right"><img src="images/img6.png" title="workshops" alt="workshops" class="thumb"></div>
+             </div>
+         </div>
+         
+         <div id="cube2" class="wrap">
+                <div class="cube" id="cubic2">
+                    <div class="front"> <img src="images/img7.png" title="mathematica" alt="mathematica" class="thumb"></div>
+                    <div class="back"><img src="images/img8.png" title="paperpresentation" alt="paperpresentation" class="thumb"> </div>
+                    <div class="top"><img src="images/img9.png" title="petrogaia" alt="petrogaia" class="thumb"></div>
+                    <div class="bottom"><img src="images/img10.png" title="guestlectures" alt="guestlectures" class="thumb"></div>
+                    <div class="left"><img src="images/img11.png" title="prakriti" alt="prakriti" class="thumb"></div>
+                    <div class="right"> <img src="images/img12.png" title="esummit" alt="esummit" class="thumb"> </div>
+         </div>    
+       </div>
+            
+   </div>
+    
+     <style>
+         
+        body {
+            font-size: 16px;
+            text-align:center;
+		    margin:0 auto;
+			width:auto;
+			height:auto;
+            overflow: hidden;
+            color: #fff;
+        }
+        #wrapper1{
+             display: block;
+         }
+         #wrapper1.wrapper1_hidden{
+             -webkit-animation: hide 1s linear forwards;
+             -moz-animation: hide 1s linear forwards;
+             -o-animation: hide 1s linear forwards;
+             animation: hide 1s linear forwards;
+         }
+         @-webkit-keyframes hide{
+             from{height: auto}
+             to{height: 0px}
+         }
+
+         h1 {
+         width: auto;
+         text-align: center;
+         margin-top: 40px;
+         color: #fff;
+         text-shadow: 1px 0px 10px #00FFCC;
+         font-family: ardestine;
+         font-size: 40px;
+         z-index: 100;
+         }
+         h1#cs {
+         position: absolute;
+         margin-bottom: 2px;
+         font-family: Batang;
+         display: block;
+         }
+
+         
+			.thumb
+			{
+				width:200px;
+				height:200px;
+				text-align:center;	
+				margin:0 auto;
+				position:relative;
+			}
+            body {
+                background-color: rgba(1,2,3,0);
+				outline:0;
+				width:auto;
+				height:auto;
+            }
+
+            .wrap {
+                margin-top: 70px;
+                perspective: 1000;
+                perspective-origin: 50% 50%;
+				width:400px;
+				position:relative;
+				
+			
+            }
+/*
+            @-webkit-keyframes bganim {
+                from {
+                    background-position: 0px;
+                }
+
+                to {
+                    background-position: 80px;
+                }
+            }
+*/			    #cube1{
+				float:left;
+				}
+				#cube2{
+				float:right;
+				}
+            .cube {
+                margin: auto;
+                position: relative;
+                height: 200px;/*200*/
+                width: 200px;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+				display:inline-block;
+            }
+
+                .cube div {
+                    position: absolute;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0.9;
+                    background-color: #000;
+                    border: solid 1px #eee;
+                    color: #fff;
+                    font: 10px arial;
+                    -webkit-transition: transform 0.2s ease-in;
+                    -moz-transition: transform 0.2s ease-in;
+                      -o-transition: transform 0.2s ease-in;
+                        transition: transform 0.2s ease-in;
+                }
+
+            .front {
+                -webkit-transform: translateZ(120px);
+                 -moz-transform: translateZ(120px);
+                  -o-transform: translateZ(120px);
+                   transform: translateZ(120px);
+            }
+
+            .back {
+                -webkit-transform: translateZ(-80px) rotateY(180deg) ;
+                 -moz-transform: translateZ(-80px) rotateY(180deg) ;
+                  -o-transform: translateZ(-80px) rotateY(180deg) ;
+                   transform: translateZ(-80px) rotateY(180deg) ;
+            }
+
+            .right {
+                -webkit-transform: rotateY(-270deg) translateX(80px);
+                  -moz-transform: rotateY(-270deg) translateX(80px);
+                    -o-transform: rotateY(-270deg) translateX(80px);
+                      transform: rotateY(-270deg) translateX(80px);
+                
+                      -webkit-transform-origin: top right;
+                      -moz-transform-origin: top right;
+                      -o-transform-origin: top right;
+                      transform-origin: top right;
+            }
+
+            .left {
+                -webkit-transform: rotateY(270deg) translateX(-80px);
+                -moz-transform: rotateY(270deg) translateX(-80px);
+                -o-transform: rotateY(270deg) translateX(-80px);
+                transform: rotateY(270deg) translateX(-80px);
+                
+                -webkit-transform-origin: center left;
+                -moz-transform-origin: center left;
+                -o-transform-origin: center left;
+                transform-origin: center left;
+            }
+
+            .top {
+                -webkit-transform: rotateX(-270deg) translateY(-80px);
+                -moz-transform: rotateX(-270deg) translateY(-80px);
+                -o-transform: rotateX(-270deg) translateY(-80px);
+                transform: rotateX(-270deg) translateY(-80px);
+                
+                -webkit-transform-origin: top center;
+                -moz-transform-origin: top center;
+                -o-transform-origin: top center;
+                transform-origin: top center;
+            }
+
+            .bottom {
+                -webkit-transform: rotateX(270deg) translateY(80px);
+                -moz-transform: rotateX(270deg) translateY(80px);
+                -o-transform: rotateX(270deg) translateY(80px);
+                transform: rotateX(270deg) translateY(80px);
+                
+                -webkit-transform-origin: bottom center;
+                -moz-transform-origin: bottom center;
+                -o-transform-origin: bottom center;
+                transform-origin: bottom center;
+            }
+
+            @-webkit-keyframes rotate {
+                0% {
+                    -webkit-transform: rotateX(0deg) rotateZ(0deg);
+                    -moz-transform: rotateX(0deg) rotateZ(0deg);
+                    -o-transform: rotateX(0deg) rotateZ(0deg);
+                    transform: rotateX(0deg) rotateZ(0deg);
+                }
+
+                25% {
+                    -webkit-transform: rotateX(360deg) rotateZ(360deg);
+                    -moz-transform: rotateX(360deg) rotateZ(360deg);
+                    -o-transform: rotateX(360deg) rotateZ(360deg);
+                    transform: rotateX(360deg) rotateZ(360deg);
+                }
+				50%{
+				  	-webkit-transform: rotateY(0deg) rotateX(360deg);
+                     -moz-transform: rotateY(0deg) rotateX(360deg); 
+                     -o-transform: rotateY(0deg) rotateX(360deg); 
+                     transform: rotateY(0deg) rotateX(360deg);
+				}
+				75%{
+					-webkit-transform: rotateY(360deg) rotateX(0deg);
+                    -moz-transform: rotateY(360deg) rotateX(0deg);
+                    -o-transform: rotateY(360deg) rotateX(0deg);
+                    transform: rotateY(360deg) rotateX(0deg);
+				}
+				100%{
+					-webkit-transform: rotateY(0deg) rotateX(360deg);
+                    -moz-transform: rotateY(0deg) rotateX(360deg);
+                    -o-transform: rotateY(0deg) rotateX(360deg);
+                    transform: rotateY(0deg) rotateX(360deg);
+				}
+            }
+         
+             @-webkit-keyframes rotate2 {
+                100% {
+                    -webkit-transform: rotateX(0deg) rotateZ(0deg);
+                    -moz-transform: rotateX(0deg) rotateZ(0deg);
+                    -o-transform: rotateX(0deg) rotateZ(0deg);
+                    transform: rotateX(0deg) rotateZ(0deg);
+                }
+
+                75% {
+                    -webkit-transform: rotateX(360deg) rotateZ(360deg);
+                    -moz-transform: rotateX(360deg) rotateZ(360deg);
+                    -o-transform: rotateX(360deg) rotateZ(360deg);
+                    transform: rotateX(360deg) rotateZ(360deg);
+                }
+				50%{
+				  	-webkit-transform: rotateY(0deg) rotateX(360deg);
+                      -moz-transform: rotateY(0deg) rotateX(360deg);
+                      -o-transform: rotateY(0deg) rotateX(360deg);
+                      transform: rotateY(0deg) rotateX(360deg);
+				}
+				25%{
+					-webkit-transform: rotateY(360deg) rotateX(0deg);
+                    -moz-transform: rotateY(360deg) rotateX(0deg);
+                    -o-transform: rotateY(360deg) rotateX(0deg);
+                    transform: rotateY(360deg) rotateX(0deg);
+				}
+				0%{
+					-webkit-transform: rotateY(0deg) rotateX(360deg);
+                    -moz-transform: rotateY(0deg) rotateX(360deg);
+                    -o-transform: rotateY(0deg) rotateX(360deg);
+                    transform: rotateY(0deg) rotateX(360deg);
+				}
+            }
+
+            .cube {
+                -webkit-animation: rotate 50s infinite linear;
+                -moz-animation: rotate 50s infinite linear;
+                -o-animation: rotate 50s infinite linear;
+                animation: rotate 50s infinite linear;
+            }
+            #cubic2 {
+                -webkit-animation: rotate2 50s infinite linear;
+                -moz-animation: rotate2 50s infinite linear;
+                -o-animation: rotate2 50s infinite linear;
+                animation: rotate2 50s infinite linear;
+            }
+			.wrap:hover{
+				cursor:pointer;
+			}
+
+            .wrap:hover .front {
+                -webkit-transform: translateZ(150px);
+                -moz-transform: translateZ(150px);
+                -o-transform: translateZ(150px);
+                transform: translateZ(150px);
+            }
+
+            .wrap:hover .back {
+                -webkit-transform: translateZ(-150px) rotateY(180deg) ;
+                -moz-transform: translateZ(-150px) rotateY(180deg) ;
+                -o-transform: translateZ(-150px) rotateY(180deg) ;
+                transform: translateZ(-150px) rotateY(180deg) ;
+            }
+
+            .wrap:hover .right {
+                -webkit-transform: rotateY(-270deg) translateZ(50px) translateX(100px);
+                -moz-transform: rotateY(-270deg) translateZ(50px) translateX(100px);
+                -o-transform: rotateY(-270deg) translateZ(50px) translateX(100px);
+                transform: rotateY(-270deg) translateZ(50px) translateX(100px);
+            }
+
+            .wrap:hover .left {
+                -webkit-transform: rotateY(270deg) translateZ(50px) translateX(-100px);
+                -moz-transform: rotateY(270deg) translateZ(50px) translateX(-100px);
+                -o-transform: rotateY(270deg) translateZ(50px) translateX(-100px);
+                transform: rotateY(270deg) translateZ(50px) translateX(-100px);
+            }
+
+            .wrap:hover .top {
+                -webkit-transform: rotateX(-270deg) translateZ(50px) translateY(-100px);
+                -moz-transform: rotateX(-270deg) translateZ(50px) translateY(-100px);
+                -o-transform: rotateX(-270deg) translateZ(50px) translateY(-100px);
+                transform: rotateX(-270deg) translateZ(50px) translateY(-100px);
+            }
+
+            .wrap:hover .bottom {
+                -webkit-transform: rotateX(270deg) translateZ(50px) translateY(100px);
+                -moz-transform: rotateX(270deg) translateZ(50px) translateY(100px);
+                -o-transform: rotateX(270deg) translateZ(50px) translateY(100px);
+                transform: rotateX(270deg) translateZ(50px) translateY(100px);
+            }
+			.cube_holder{
+				display:inline-block;
+			}
+
+    </style>
+    </div><!--wrapper 1-->
+ <div id="wrapper">
+       
+        <div id="event_loader">
+            <div id="list_container">
+               
+                   <ul id="robotics" class="event_list selected_ul">
+                        <li ><h2>Amphibious Robot Challenge</h2></li>
+                        <li><h2>Robo-Braiser</h2></li>
+                        <li><h2>Mazenough</h2></li>
+                        <li><h2>Death Race</h2></li>
+                        <li><h2>Soccer Pursuit</h2></li>
+                        <li><h2>Robowar</h2></li>
+                        <li><h2>Robo Aqua War</h2></li>
+                        <li><h2>Minero_Uno</h2></li>
+                        <li><h2>La Caza</h2></li>
+                        <li><h2>Track the way</h2></li>
+                        <li><h2>The Battle of Fort</h2></li>
+                        <li><h2>Robot Trilogy</h2></li>
+                        
+                    </ul>
+                    <ul id="design" class="event_list">
+                        <li class="selected_li_list"><h2>Junkyard Wars</h2></li>
+                        <li ><h2>Aerodrones</h2></li>
+                        <li ><h2>TRUSST THE FRAME</h2></li>
+                    </ul>   
+                    <ul id="codica" class="event_list">
+                        <li ><h2>Erreur Fixateur</h2></li>
+                        <li ><h2>HackX</h2></li>
+                        <li ><h2>Gizmo's Luck</h2></li>
+                        <li ><h2>WEBs</h2></li>
+                    </ul>
+                    <ul id="gaming" class="event_list">
+                   <!--  <li class="selected_li_list"><h2>Counter Strike</h2></li>--> 
+                        <li ><h2>Fifa</h2></li>
+                        <li ><h2>NFS</h2></li>
+                        <li ><h2>Rise Of Nations</h2></li>
+                        <li ><h2>Counter Strike 1.6</h2></li>
+                     </ul>
+                    <ul id="quiz" class="event_list">
+                        <li><h2>Geofag-Concurso 2.0</h2></li>
+                        <li><h2>Turbo-War</h2></li>
+                        <li><h2>Geomania</h2></li>
+                         <li><h2>Communiazone</h2></li>
+                     </ul>
+                     
+                 <ul id="simulazione" class="event_list">
+                        <li ><h2>Digio Circuitto</h2></li>
+                        <li ><h2>Inverser la Fabrication</h2></li>
+                        <li ><h2>Circuit Debugging</h2></li>
+                        <li ><h2>Electrik-Champ</h2></li>
+                        <li ><h2>CIRCUIT-MERCHANT</h2></li>
+                        <li ><h2>Simu-eleKtriKa</h2></li>
+                     </ul>                   
+                <ul id="workshops" class="event_list">
+                    <li class="selected_li_list"><h2>Sixth Sense</h2></li>
+                        
+                     </ul>    
+                <ul id="mathematica" class="event_list">
+                        <li ><h2>A GAME OF CODES</h2></li>
+                        <li ><h2>BUFFET'S MONEYBAG</h2></li>
+                        <li ><h2>LE CRICKETIALA</h2></li>
+                        <li ><h2>CYPHER DECODING</h2></li>
+                        <li ><h2>MIND FUZZY</h2></li>
+                     </ul>                   
+                <ul id="paperpresentation" class="event_list"><!--CAse study-->
+                        <li ><h2>CON-EXIMIUS</h2></li>
+                        <li><h2>Conferral</h2></li>
+                        <li ><h2>ELECTROMANIAC</h2></li>
+                        <li><h2>Eureka</h2></li>
+                     <li><h2>Kartavya Case Study</h2></li>
+                        <li><h2>Geo-Draft 2.0</h2></li>
+                        <li><h2>Geo Fabrica</h2></li>
+                        <li><h2>Di ESPLORARE</h2></li>
+                        <li><h2>Presentazione</h2></li>
+                        <li><h2>GEO-MANIFESTO</h2></li>
+                       
+                     </ul>   
+                <ul id="petrogaia" class="event_list">
+                        <li ><h2>ADROITA</h2></li>
+                        <li ><h2>VELLUMIN</h2></li>
+                        <li ><h2>PETRO PANACEA</h2></li>
+                        <li ><h2>PETR-O-TRIVIA</h2></li>
+                        <li ><h2>QUIZZYPET</h2></li>
+                        <li ><h2>GREEN GALLERY</h2></li>
+                     </ul>                   
+                <ul id="guestlectures" class="event_list">
+                        <!-- <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>--> 
+                        <li><h2>Geo-Vita</h2></li>
+                     </ul> 
+                <ul id="prakriti" class="event_list">
+                        <li class="selected_li_list"><h2>Case study</h2></li>
+                        <li ><h2>Imago rudimentum</h2></li>
+                        <li ><h2>Panel discussion</h2></li>
+                        <li ><h2>AptusTrivio</h2></li>
+                        <li ><h2>Liter Of Light</h2></li>
+                        <li ><h2>Geo-Modelling</h2></li>
+                     </ul> 
+                <ul id="esummit" class="event_list">
+                     <li class="selected_li_list"><h2>Bizkraft</h2></li>
+                    <li ><h2>Chanakya's Dilemma</h2></li>
+                    <li ><h2>Business Baazigar</h2></li>
+                    <li ><h2>Corporate Battlefield</h2></li>
+                    <li ><h2>Yukti</h2></li>
+                     </ul> 
+                </div>
+                <ul id="catalyca" class="event_list">
+                            <li class="selected_li_list"><h2>Brainquest</h2></li>
+                            <li ><h2>Dessein La modele</h2></li>
+                            <li ><h2>Chemifuge</h2></li>
+                         </ul> 
+                    </div>
+            <!--LISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLIST-->
+           <div id="event_content">
+           
+        </div>
+
+
+
+           </div>
+            <ul id="info_navigator" class="info_navigator_hidden">
+                <li class="selected_li_info"><h2>Introduction</h2></li>
+                <li><h2>Abstract</h2></li>
+                <li><h2>Prizes</h2></li>
+                <li><h2>Contacts</h2></li>
+            </ul>
+           
+         </div>
+        
+      <div id="event_categories">
+        <ul>
+                    <li><img src= "../image/event_icons/img.png" title="Robotics" alt="Robotics" class="thumb2" /><h3>robotics</h3></li>
+                    <li><img src= "../image/event_icons/designnbuild.png" title="Design & Build" alt="design" class="thumb2" /><h3>design</h3></li>
+                    <li><img src="../image/event_icons/img2.png" title="Codica" alt="Codica" class="thumb2" /><h3>codica</h3></li>
+                    <li><img src="../image/event_icons/img3.png" title="Gaming" alt="Gaming" class="thumb2" /><h3>gaming</h3></li>
+                    <li><img src= "../image/event_icons/img4.png" title="Quiz & Exhibitions" alt="Quiz & Exhibitions" class="thumb2" /><h3>quiz</h3></li>
+                    <li><img src="../image/event_icons/simulazione.png" title="Simulazione" alt="Simulazione" class="thumb2" /><h3>simulazione</h3></li>
+                    <li><img src="../image/event_icons/img6.png" title="WorkShops" alt="WorkShops" class="thumb2" /><h3>workshops</h3></li>
+                    <li><img src= "../image/event_icons/img7.png" title="Mathematica" alt="Mathematica" class="thumb2" /><h3>mathematica</h3></li>
+                    <li><img src="../image/event_icons/img8.png" title="Paper Presentation" alt="Paper Presentation" class="thumb2" /><h3>paperpresentation</h3></li>
+                    <li><img src="../image/event_icons/img9.png" title="PetroGaia" alt="PetroGaia" class="thumb2" /><h3>petrogaia</h3></li>
+                    <li><img src="../image/event_icons/img10.png" title="Guest Lectures" alt="Guest Lectures" class="thumb2" /><h3>guestlectures</h3></li>
+                    <li><img src= "../image/event_icons/img11.png" title="PRAKRITI" alt="PRAKRITI" class="thumb2" /><h3>prakriti</h3></li>
+                    <li><img src= "../image/event_icons/img12.png" title="E-SUMMIT" alt="E-SUMMIT" class="thumb2" /><h3>esummit</h3></li>
+                    <li><img src= "../image/event_icons/catalyca.png" title="CATALYTICA" alt="CATALYTICA" class="thumb2" /><h3>catalyca</h3></li>
+        </ul>
+        </div>
+        </div>
+<style type="text/css">
+            *{
+                margin: 0px;
+                padding: 0px;
+                -webkit-transition: all ease-in 0.4s;
+            }
+            #loader{
+ 	        position:absolute;
+ 	        left:calc(50% - 100px);
+ 	        top:calc(50% - 100px);
+	        /* border:2px solid #FFF;*/
+ 	        display: none;
+
+            }
+                #se{
+              width:200px;
+              height:200px;
+              margin-left:2px;
+              border-top:2px solid #0CF;
+              border-bottom:2px solid #0CF;
+              border-radius:100px;
+              -moz-animation: 1s rotate4 infinite linear  ;
+              -moz-transform-origin: 50% 50%; 
+              -webkit-animation: 1s rotate4 infinite linear  ;
+              -webkit-transform-origin: 50% 50%; 
+              -o-animation: 1s rotate4 infinite linear  ;
+              -o-transform-origin: 50% 50%; 
+              animation: 1s rotate4 infinite linear  ;
+              transform-origin: 50% 50%; 
+            }
+            #nwi{
+              width:100px;
+              height:100px;
+              border-radius:50px;
+              margin-left:50px;
+              margin-top:50px;
+              border-right:1px solid #0CF;
+              border-left:1px solid #0CF;
+              -moz-animation: 20s rotate4 infinite linear  ;
+              -moz-transform-origin: 50% 50%; 
+              -webkit-animation: 20s rotate4 infinite  linear  ;
+              -webkit-transform-origin: 50% 50%;  
+              -o-animation: 20s rotate4 infinite linear  ;
+              -o-transform-origin: 50% 50%; 
+              animation: 20s rotate4 infinite  linear  ;
+              transform-origin: 50% 50%;  
+            }
+             @-webkit-keyframes rotate4 {
+                0%    { -webkit-transform: rotate(0);-moz-transform: rotate(0);-o-transform: rotate(0);transform: rotate(0); }
+                100% { -webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg); } 
+            }
+        
+            #wrapper{
+                display: none;
+            }
+            #event_categories{
+               display:block;
+               clear: left;
+               position: absolute;
+               bottom: 0;
+               width: 99.9%;
+               transform-style: preserve-3d;
+            }
+            #event_categories:hover{
+                -webkit-transform: rotateX(0deg);
+            }
+             #event_categories>ul{
+               list-style-type: none;
+               text-align: center;
+               cursor: pointer;
+               padding-top: 8px;
+                -webkit-transition: all ease-in 0.4s;
+                 -moz-transition: all ease-in 0.4s;
+                  -o-transition: all ease-in 0.4s;
+                   transition: all ease-in 0.4s;
+            }
+            #event_categories>ul>li{
+                display: inline-block;
+                height: 80px;
+                -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+            }
+             #event_categories>ul>li>img{
+                display: inline-block;
+                vertical-align: middle;
+            }
+             #event_categories>ul>li>h3{
+               display: inline-block;
+               height: 80px;
+               display: none;
+               margin: 0;
+              
+            }
+           #event_categories>ul>li:hover>img{
+                -webkit-transform: scale(1.4);
+                -webkit-transition: all linear 0.2s;
+                 -moz-transform: scale(1.4);
+                -moz-transition: all linear 0.2s;
+                 -o-transform: scale(1.4);
+                -o-transition: all linear 0.2s;
+                 transform: scale(1.4);
+                transition: all linear 0.2s;
+                
+            }
+            
+            .thumb2{
+                width: 60px;
+                height: 60px;
+            }
+            #event_loader {
+                clear: right;
+                margin-top: 20px;
+                
+                
+            }
+            
+            #event_content{
+                float: left;
+                width: calc(100% - 710px);
+                height: calc(100% - 200px);/*20px top + 80px bot*/
+                min-height: 400px;
+                min-width: 500px;
+                margin-left: 400px;
+                clear: right;
+                border:  2px solid rgba(255,255,255,0.4);
+                border-top:none;
+                -webkit-perspective:1000; 
+                transform-style: preserve-3d;
+                -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+                margin-top: 40px;
+                
+            }
+            #event_content:hover {
+                -webkit-transform: rotateY(0deg);
+            }
+            
+            #event_content>h1{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+    
+            #event_content>div{
+                text-align: center;
+                margin-top: 0px;
+                font-family: 'Myriad Pro';
+                display: none;
+               -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+                text-align: left;
+                max-height: 400px;
+                text-justify: auto;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            #event_content>div>h2{
+                 text-shadow: 1px 0px 6px #00FFCC;
+            }
+            #event_content>div>h3{
+                text-align: center;
+                font-family: 'Adobe Heiti Std';
+    }
+            #event_content>div>p{
+                margin-top: 20px;
+                font-size: 18px;
+                text-align: justify;
+            }
+            #event_content>.selected_content{
+                display: block;
+                -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+            
+                -webkit-animation: lower 0.5s linear forwards;/*mutate*/
+                -moz-animation: lower 0.5s linear forwards;
+                -o-animation: lower 0.5s linear forwards;
+                animation: lower 0.5s linear forwards;
+            }
+
+            #info_navigator.info_navigator_hidden{
+                -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+                
+            -webkit-animation: higher 0.5s linear forwards;
+            -moz-animation: higher 0.5s linear forwards;
+            -o-animation: higher 0.5s linear forwards;
+            animation: higher 0.5s linear forwards;
+            }
+            @-webkit-keyframes mutate{
+                from{-webkit-transform: scale(0.5);-moz-transform: scale(0.5);-o-transform: scale(0.5);transform: scale(0.5)}
+                to{-webkit-transform: scale(1);-moz-transform: scale(1);-o-transform: scale(1);transform: scale(1)}
+            }
+            @-webkit-keyframes lower{
+                from{-webkit-transform: scaleY(0);-moz-transform: scaleY(0);-o-transform: scaleY(0);transform: scaleY(0)}
+                to{-webkit-transform: scaleY(1);-moz-transform: scaleY(1);-o-transform: scaleY(1);transform: scaleY(1)}
+            }
+            @-webkit-keyframes higher{
+                from{-webkit-transform: scaleY(1);-moz-transform: scaleY(1);-o-transform: scaleY(1);transform: scaleY(1)}
+                to{-webkit-transform: scaleY(0)}
+            }
+           /* #Abstract{
+            height: inherit;
+            overflow-y: auto;
+            }*/
+            #event_content>div{
+        height: inherit;
+        overflow-y: auto;
+    }
+    
+            #info_navigator{
+               list-style-type: none; 
+               float: right;
+               margin-right: 40px;
+               margin-top: 100px;
+               clear: right;
+               width: 200px;
+               -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+               
+               
+               -webkit-animation: lower 0.5s linear forwards;
+               -moz-animation: lower 0.5s linear forwards;
+               -o-animation: lower 0.5s linear forwards;
+               animation: lower 0.5s linear forwards;
+            }
+             #info_navigator>li{
+               height: 40px;
+               -webkit-transition: all ease 0.2s;
+               -moz-transition: all ease 0.2s;
+               -o-transition: all ease 0.2s;
+               transition: all ease 0.2s;
+               cursor: pointer;
+               border-right: 8px solid #fff;
+               margin-top: 4px;
+            }
+            #info_navigator>li:hover{
+               margin-left: -55px;
+               background-color:  rgba(243, 83, 196, 0.55);
+               text-shadow: 1px 0px 10px #00FFCC;
+            }
+            .event_list{
+                margin-top: 100px;
+                margin-left: 38px;
+                position: absolute;
+                width: 300px;/*255*/
+                display: none;
+                max-height: 60%;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .event_list#robotics{
+                display: block;
+                }           
+            .event_list>li{
+                border-left: 8px solid #fff;
+                height: 40px;
+                cursor: pointer;
+                list-style-type: none;
+                margin-top: 4px;
+                -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                -o-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+            }
+            .event_list>li:hover{
+                   -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                -o-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+                  background-color: rgba(241, 231, 45, 0.46);
+                  margin-right: -55px;
+                  text-shadow: 1px 0px 10px #00FFCC;
+            }
+            .selected_ul>li{
+                -webkit-transition: all linear 0.2s;
+                -moz-transition: all linear 0.2s;
+                -o-transition: all linear 0.2s;
+                transition: all linear 0.2s;
+                
+                
+                -webkit-animation: lower 0.4s linear forwards;
+                 -moz-animation: lower 0.4s linear forwards;
+                  -o-animation: lower 0.4s linear forwards;
+                   animation: lower 0.4s linear forwards;
+            }
+    
+    
+            .selected_li_info{
+                background-color: rgba(58, 160, 173, 0.67);
+                color: #FFFFFF;
+                margin-left: -55px;
+                text-shadow: 1px 0px 10px #AED829;
+            }
+            .selected_li_list{
+                background-color: rgba(140, 245, 115, 0.4);
+                color: #fff;
+                margin-right: -55px;
+                text-shadow: 1px 0px 10px #00FFCC;
+            }
+            ul>li>h2{
+            font-family:'Estrangelo Edessa'; 
+            padding-top: 8px;
+            }
+            #prizes{
+            display: none;
+            }
+            #contacts{
+            display: none;
+            }
+            #abstract{
+            display: none;
+            }
+            .hidden_content{
+            width: 0px;
+            }
+            .event_image{
+            width: 500px;
+            height: 400px;
+            }
+    @font-face{
+ font-family:ardestine;
+ src:url(../font/ARDESTINE.ttf);
+}
+            
+        </style>
+    <script>
+        $(document).ready(function () {
+
+            $(document).find("#info_navigator>li").click(function () {
+                $(document).find('#info_navigator>li').removeClass('selected_li_info');
+                $(this).addClass("selected_li_info");
+                var z = "#" + $(this).text();
+                $(document).find("#event_content>div.selected_content").hide().removeClass('selected_content');
+                $(document).find(z).show().toggleClass('selected_content');
+            });
+
+            $("#event_categories>ul>li").click(function () {
+                $("#wrapper1").fadeOut("fast", function () {
+                    $("#wrapper").fadeIn();
+                });
+                $(".event_list>li").removeClass("selected_li_list");
+                $("#info_navigator").addClass('info_navigator_hidden');
+                var hyper = $(this).text();
+                
+                if (hyper == "") {
+                    $(".selected_ul").slideUp("fast");
+                    $("#event_content").load("eventcontents/comingsoon.html");
+                    $("#info_navigator").addClass('info_navigator_hidden');
+                } else {
+                    $(".selected_ul").removeClass('selected_ul').slideUp("fast", function () {
+
+                        $("#" + hyper).addClass('selected_ul').show("fast", function () {
+                            $("#event_content").load("event_overview/" + hyper + ".html");
+                        });
+                    });
+                }
+
+            });
+
+            $(".event_list>li").click(function () {
+                $(".event_list>li").removeClass("selected_li_list");
+                $(this).addClass("selected_li_list");
+                $("#info_navigator").removeClass('info_navigator_hidden');
+                // alert($(this).text().slice(0, $(this).text().indexOf(" ")));
+                $("#loader").show("size", "fast");
+                $("#event_content").load("eventcontents/" + $(this).text().slice(0, $(this).text().indexOf(" ")) + ".html", function () {
+                    //load html page name with last letter ommitted if onw word
+                    $("#info_navigator>li").first().click();
+                    $("#loader").hide("size", "fast");
+                });
+            });
+
+
+            $(".cube>div>img").click(function () {
+                var link = $(this).attr('alt');
+                $("#wrapper1").fadeOut("fast", function () {
+                    $("#wrapper").slideDown();
+                    //$("#event_categories>ul>li").first().click();
+                    switch (link) {
+                        case "robotics":
+                            {
+                                $("#event_categories>ul>li").first().click(); //$("#event_categories>ul>li:n-th child(1)")
+                                break;
+                            }
+                        case "coding":
+                            {
+                                $("#event_categories>ul>li:nth-child(2)").click();
+                                break;
+                            }
+                        case "gaming":
+                            {
+                                $("#event_categories>ul>li:nth-child(3)").click();
+                                break;
+                            }
+                        case "quiz":
+                            {
+                                $("#event_categories>ul>li:nth-child(4)").click();
+                                break;
+                            }
+                        case "simulazione":
+                            {
+                                $("#event_categories>ul>li:nth-child(5)").click();
+                                break;
+                            }
+                        case "workshops":
+                            {
+                                $("#event_categories>ul>li:nth-child(6)").click();
+                                break;
+                            }
+                        case "mathematica":
+                            {
+                                $("#event_categories>ul>li:nth-child(7)").click();
+                                break;
+                            }
+                        case "paperpresentation":
+                            {
+                                $("#event_categories>ul>li:nth-child(8)").click();
+                                break;
+                            }
+                        case "petrogaia":
+                            {
+                                $("#event_categories>ul>li:nth-child(9)").click();
+                                break;
+                            }
+                        case "guestlectures":
+                            {
+                                $("#event_categories>ul>li:nth-child(10)").click();
+                                break;
+                            }
+                        case "prakriti":
+                            {
+                                $("#event_categories>ul>li:nth-child(11)").click();
+                                break;
+                            }
+                        case "esummit":
+                            {
+                                $("#event_categories>ul>li:nth-child(12)").click();
+                                break;
+                            }
+                    }
+                })
+            });
+
+        })
+
+
+    </script>
+    </body>
+   
+     
+
+

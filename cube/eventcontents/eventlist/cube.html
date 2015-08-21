@@ -1,0 +1,578 @@
+﻿
+<body>
+    <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.10.2.custom.js" type="text/javascript"></script>
+    <div id="wrapper1"><h1><u>EVENTS</u></h1>
+    <div class="cube_holder" style="direction: ltr; text-align: center ; margin-top: 100px;">
+
+        
+        <div id="cube1" class="wrap">
+            <div class="cube">
+                <div class="front"> <img src="images/img.png" title="robotica" alt="" class="thumb"></div>
+                <div class="back"><img src="images/img2.png" title="codica" alt="" class="thumb"></div>
+                <div class="top"><img src="images/img3.png" title="gaming" alt="" class="thumb"> </div>
+                <div class="bottom"><img src="images/img4.png" title="quiz" alt="" class="thumb"> </div>
+                <div class="left"><img src="images/img5.png" title="casestudies" alt="" class="thumb"></div>
+                <div class="right"><img src="images/img6.png" title="workshops" alt="" class="thumb"></div>
+             </div>
+         </div>
+         
+         <div id="cube2" class="wrap">
+                <div class="cube" id="cubic2">
+                    <div class="front"> <img src="images/img7.png" title="" alt="" class="thumb"></div>
+                    <div class="back"><img src="images/img8.png" title="" alt="" class="thumb"> </div>
+                    <div class="top"><img src="images/img9.png" title="" alt="" class="thumb"></div>
+                    <div class="bottom"><img src="images/img10.png" title="" alt="" class="thumb"></div>
+                    <div class="left"><img src="images/img11.png" title="" alt="" class="thumb"></div>
+                    <div class="right"> <img src="images/img12.png" title="" alt="" class="thumb"> </div>
+         </div>    
+       </div>
+       <h1 id="cs">Coming soon</h1>      
+   </div>
+    
+     <style>
+         
+        body {
+            font-size: 16px;
+            text-align:center;
+		    margin:0 auto;
+			width:auto;
+			height:auto;
+            overflow: hidden;
+            color: #fff;
+        }
+        #wrapper1{
+             display: none;
+         }
+         h1 {
+         width: auto;
+         text-align: center;
+         margin-top: 40px;
+         color: #fff;
+         text-shadow: 1px 0px 10px #00FFCC;
+         font-family: 'AR DESTINE';
+         font-size: 40px;
+         z-index: 100;
+         }
+         h1#cs {
+         position: absolute;
+         margin-bottom: 2px;
+         font-family: Batang;
+         display: block;
+         }
+
+         
+			.thumb
+			{
+				width:200px;
+				height:200px;
+				text-align:center;	
+				margin:0 auto;
+				position:relative;
+			}
+            body {
+                background-color: rgba(1,2,3,0);
+				outline:0;
+				width:auto;
+				height:auto;
+            }
+
+            .wrap {
+                margin-top: 140px;
+                perspective: 1000;
+                perspective-origin: 50% 50%;
+				width:400px;
+				position:relative;
+				
+			
+            }
+/*
+            @-webkit-keyframes bganim {
+                from {
+                    background-position: 0px;
+                }
+
+                to {
+                    background-position: 80px;
+                }
+            }
+*/			    #cube1{
+				float:left;
+				}
+				#cube2{
+				float:right;
+				}
+            .cube {
+                margin: auto;
+                position: relative;
+                height: 200px;/*200*/
+                width: 200px;
+                transform-style: preserve-3d;
+				display:inline-block;
+            }
+
+                .cube div {
+                    position: absolute;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0.9;
+                    background-color: #000;
+                    border: solid 1px #eee;
+                    color: #fff;
+                    font: 10px arial;
+                    transition: transform 0.2s ease-in;
+                }
+
+            .front {
+                transform: translateZ(120px);
+            }
+
+            .back {
+                transform: translateZ(-80px) rotateY(180deg) ;
+            }
+
+            .right {
+                transform: rotateY(-270deg) translateX(80px);
+                transform-origin: top right;
+            }
+
+            .left {
+                transform: rotateY(270deg) translateX(-80px);
+                transform-origin: center left;
+            }
+
+            .top {
+                transform: rotateX(-270deg) translateY(-80px);
+                transform-origin: top center;
+            }
+
+            .bottom {
+                transform: rotateX(270deg) translateY(80px);
+                transform-origin: bottom center;
+            }
+
+            @-webkit-keyframes rotate {
+                0% {
+                    transform: rotateX(0deg) rotateZ(0deg);
+                }
+
+                25% {
+                    transform: rotateX(360deg) rotateZ(360deg);
+                }
+				50%{
+				  	transform: rotateY(0deg) rotateX(360deg);
+				}
+				75%{
+					transform: rotateY(360deg) rotateX(0deg);
+				}
+				100%{
+					transform: rotateY(0deg) rotateX(360deg);
+				}
+            }
+         
+             @-webkit-keyframes rotate2 {
+                100% {
+                    transform: rotateX(0deg) rotateZ(0deg);
+                }
+
+                75% {
+                    transform: rotateX(360deg) rotateZ(360deg);
+                }
+				50%{
+				  	transform: rotateY(0deg) rotateX(360deg);
+				}
+				25%{
+					transform: rotateY(360deg) rotateX(0deg);
+				}
+				0%{
+					transform: rotateY(0deg) rotateX(360deg);
+				}
+            }
+
+            .cube {
+                -webkit-animation: rotate 50s infinite linear;
+            }
+            #cubic2 {
+                -webkit-animation: rotate2 50s infinite linear;
+            }
+			.wrap:hover{
+				cursor:pointer;
+			}
+
+            .wrap:hover .front {
+                transform: translateZ(150px);
+            }
+
+            .wrap:hover .back {
+                transform: translateZ(-150px) rotateY(180deg) ;
+            }
+
+            .wrap:hover .right {
+                transform: rotateY(-270deg) translateZ(50px) translateX(100px);
+            }
+
+            .wrap:hover .left {
+                transform: rotateY(270deg) translateZ(50px) translateX(-100px);
+            }
+
+            .wrap:hover .top {
+                transform: rotateX(-270deg) translateZ(50px) translateY(-100px);
+            }
+
+            .wrap:hover .bottom {
+                transform: rotateX(270deg) translateZ(50px) translateY(100px);
+            }
+			.cube_holder{
+				display:inline-block;
+			}
+
+    </style>
+    </div><!--wrapper 1-->
+ <div id="wrapper">
+       
+        <div id="event_loader">
+            <div id="list_container">
+                   <ul id="robotics" class="event_list selected_ul">
+                        <li class="selected_li_list"><h2>Autonomous</h2></li>
+                        <li><h2>Manual</h2></li>
+                    </ul>
+                    <ul id="codica" class="event_list">
+                        <li class="selected_li_list"><h2>Bugfixer</h2></li>
+                        <li ><h2>Edit IT</h2></li>
+                        <li ><h2>HACK-X</h2></li>
+                        <li ><h2>Gizmo's Luck</h2></li>
+                    </ul>
+                    <ul id="gaming" class="event_list">
+                        <li class="selected_li_list"><h2>Counter Strike</h2></li>
+                        <li ><h2>Fifa</h2></li>
+                        <li ><h2>NFS</h2></li>
+                     </ul>
+                    <ul id="quiz" class="event_list">
+                        <li class="selected_li_list"><h2>TechQuiz</h2></li>
+                        <li ><h2>QuizzyPet</h2></li>
+                     </ul>
+                     
+                 <ul id="casestudies" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul>                   
+                <ul id="workshops" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul>    
+                <ul id="mathematica" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul>                   
+                <ul id="paperpresentation" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul>   
+                <ul id="petrogaia" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul>                   
+                <ul id="guestlectures" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul> 
+                <ul id="prakriti" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul> 
+                <ul id="esummit" class="event_list">
+                        <li class="selected_li_list"><h2>Case Study1</h2></li>
+                        <li ><h2>Case Study 2</h2></li>
+                     </ul> 
+                </div>
+            <!--LISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLISTLIST-->
+           <div id="event_content">
+               <h1><strong>Bugfixer</strong></h1>
+            <div id="Introduction" class="selected_content" > 
+               <h2>Introduction</h2>
+                <p>
+               Hey kids. are you one of the best coder?If your answer is yes then this is the platform where you can prove yourself.
+               There are so many *bugs* and what u have to do is to fix that bugs and to give output of some tricky programs.
+               Exercise your brain cells and get ready for this challenge.
+               Get ready for numerous problems and only one objective-make the code better!
+                </p>
+            </div>
+            <div id="Abstract">
+                <h2>Abstract</h2>
+                <p>
+                *atmost 2 members in a team
+                *using of sources like internet,compilers etc. are strickly prohibited
+                *code would be written in c language
+                *event will span for one hour
+                *you have to register on .......... before .....
+                PROBLEM DESCRIPTION-
+                * stage1-
+                -the challenge is to fix bug in a program without using any compiler(level of programs will be basic).
+                * stage2-
+                -in this stage you have to find output of given programs(medium level).
+                * stage3-
+                -now this is the stage where you to exercise your brain more,there will be problems on fixing bug as well as on finding
+                 Output....The level of programing will be triggered and you have to completely focus to pass this stage.
+
+                    *overall winner will be decided on the basis of total marks obtain in all levels.
+                *if any team skips any level,the team will be eliminated from the event.
+                *marks for each problem will be awarded on the basis of number of lines modified and corrected.
+
+                    </p>
+</div>
+            <div id="Prizes" >
+                <h2>Prizes</h2>
+                
+                </div>
+            <div id="Contacts" >
+                <h2>Contacts</h2>
+                ASHOK PATEL +917763097893
+                DINESH KUMAR +919006519041
+                DHARAMPAL CHOUDHARY +918404981525
+                AMIT POONIA +918877070322
+            </div>
+           
+        </div>
+
+
+
+           </div>
+            <ul id="info_navigator">
+                <li class="selected_li_info"><h2>Introduction</h2></li>
+                <li><h2>Abstract</h2></li>
+                <li><h2>Prizes</h2></li>
+                <li><h2>Contacts</h2></li>
+            </ul>
+           
+            
+        </div>
+        
+      <div id="event_categories">
+        <ul>
+          <li><img src= "../image/event_icons/img.png" title="Robotics" alt="Robotics" class="thumb2" /><h3>robotics</h3></li>
+                    <li><img src="../image/event_icons/img2.png" title="Codica" alt="Codica" class="thumb2" /><h3>codica</h3></li>
+                    <li><img src="../image/event_icons/img3.png" title="Gaming" alt="Gaming" class="thumb2" /><h3>gaming</h3></li>
+                    <li><img src= "../image/event_icons/img4.png" title="Quiz & Exhibitions" alt="Quiz & Exhibitions" class="thumb2" /><h3>quiz</h3></li>
+                    <li><img src="../image/event_icons/img5.png" title="Case Studies" alt="Case Studies" class="thumb2" /><h3>casestudies</h3></li>
+                    <li><img src="../image/event_icons/img6.png" title="WorkShops" alt="WorkShops" class="thumb2" /><h3>workshops</h3></li>
+                    <li><img src= "../image/event_icons/img7.png" title="Mathematica" alt="Mathematica" class="thumb2" /><h3>mathematica</h3></li>
+                    <li><img src="../image/event_icons/img8.png" title="Paper Presentation" alt="Paper Presentation" class="thumb2" /><h3>paperpresentation</h3></li>
+                    <li><img src="../image/event_icons/img9.png" title="PetroGaia" alt="PetroGaia" class="thumb2" /><h3>petrogaia</h3></li>
+                    <li><img src="../image/event_icons/img10.png" title="Guest Lectures" alt="Guest Lectures" class="thumb2" /><h3>guestlectures</h3></li>
+                    <li><img src= "../image/event_icons/img11.png" title="PRAKRITI" alt="PRAKRITI" class="thumb2" /><h3>prakriti</h3></li>
+                    <li><img src= "../image/event_icons/img12.png" title="E-SUMMIT" alt="E-SUMMIT" class="thumb2" /><h3>esummit</h3></li>
+        </ul>
+        </div>
+        </div>
+<style type="text/css">
+            *{
+                margin: 0px;
+                padding: 0px;
+                -webkit-transition: all ease-in 0.4s;
+            }
+            #wrapper{
+            
+            }
+            #event_categories{
+               display:block;
+               clear: left;
+               position: absolute;
+               bottom: 0;
+               width: 99.9%;
+               transform-style: preserve-3d;
+              
+            }
+            #event_categories:hover{
+                -webkit-transform: rotateX(0deg);
+            }
+             #event_categories>ul{
+               list-style-type: none;
+               text-align: center;
+               cursor: pointer;
+               padding-top: 8px;
+                -webkit-transition: all ease-in 0.4s;
+            }
+            #event_categories>ul>li{
+                display: inline-block;
+                height: 80px;
+                -webkit-transition: all linear 0.2s;
+            }
+             #event_categories>ul>li>img{
+                display: inline-block;
+                vertical-align: middle;
+            }
+             #event_categories>ul>li>h3{
+               display: inline-block;
+               height: 80px;
+               display: none;
+               margin: 0;
+              
+            }
+           #event_categories>ul>li:hover>img{
+                -webkit-transform: scale(1.4);
+                -webkit-transition: all linear 0.2s;
+                
+            }
+            
+            .thumb2{
+                width: 80px;
+                height: 80px;
+            }
+            #event_loader {
+                clear: right;
+                margin-top: 20px;
+                
+                
+            }
+            
+            #event_content{
+                float: left;
+                width: calc(100% - 600px);
+                height: calc(100% - 200px);/*20px top + 80px bot*/
+                margin-left: 300px;
+                clear: right;
+                border:  2px solid #fff;
+                border-top:none;
+                -webkit-perspective:1000; 
+                transform-style: preserve-3d;
+                -webkit-transition: all linear 0.2s;
+                text-overflow: clip;
+                margin-top: 40px;
+            }
+            #event_content:hover {
+                -webkit-transform: rotateY(0deg);
+            }
+            
+            #event_content>h1{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            #event_content>div{
+                text-align: center;
+                margin-top: 40px;
+                font-family: Castellar;
+            }
+            
+            
+            #info_navigator{
+               list-style-type: none; 
+               float: right;
+               margin-right: 40px;
+               margin-top: 100px;
+               clear: right;
+               width: 200px;
+               
+            }
+             #info_navigator>li{
+               height: 40px;
+               -webkit-transition: all ease 0.2s;
+               cursor: pointer;
+               border-right: 8px solid #fff;
+               margin-top: 4px;
+            }
+            #info_navigator>li:hover{
+               margin-left: -55px;
+               background-color:  rgba(243, 83, 196, 0.55);
+               text-shadow: 1px 0px 10px #00FFCC;
+            }
+            .event_list{
+                margin-top: 150px;
+                margin-left: 38px;
+                position: absolute;
+                width: 200px;
+                display: none;
+            }
+            .event_list#robotics{
+                display: block;
+                }           
+            .event_list>li{
+                border-left: 8px solid #fff;
+                height: 40px;
+                cursor: pointer;
+                list-style-type: none;
+                margin-top: 4px;
+                -webkit-transition: all ease 0.4s;
+            }
+            .event_list>li:hover{
+                  -webkit-transition: all ease 0.4s;
+                  background-color: rgba(241, 231, 45, 0.46);
+                  margin-right: -60px;
+                  text-shadow: 1px 0px 10px #00FFCC;
+            }
+            .selected_li_info{
+                background-color: rgba(58, 160, 173, 0.67);
+                color: #FFFFFF;
+                margin-left: -55px;
+                text-shadow: 1px 0px 10px #AED829;
+            }
+            .selected_li_list{
+                background-color: rgba(140, 245, 115, 0.4);
+                color: #fff;
+                width: 255px;
+                text-shadow: 1px 0px 10px #00FFCC;
+            }
+            ul>li>h2{
+            font-family:'Estrangelo Edessa'; 
+            padding-top: 8px;
+            }
+            #prizes{
+            display: none;
+            }
+            #contacts{
+            display: none;
+            }
+            #abstract{
+            display: none;
+            }
+            .hidden_content{
+            width: 0px;
+            }
+               td{
+            border: 1px solid #fff;
+    }
+            
+        </style>
+    <script>
+        $(document).ready(function () {
+
+            $("#info_navigator>li").click(function () {
+                $('#info_navigator>li').removeClass('selected_li_info');
+                $(this).addClass("selected_li_info");
+                var z = "#" + $(this).text();
+                $("#event_content>div.selected_content").fadeOut("slow", function () {
+                    $(this).removeClass('selected_content');
+                    $(z).addClass('selected_content').show("size");
+                });
+            });
+
+            $("#event_categories>ul>li").click(function () {
+
+                var hyper = $(this).text();
+                $(".selected_ul").removeClass('selected_ul').slideUp("fast", function () {
+                    $("#" + hyper).addClass('selected_ul').show("drop", "slow");
+                });
+
+            });
+
+            $(".event_list>li").click(function () {
+                $(".event_list>li").removeClass("selected_li_list");
+                $(this).addClass("selected_li_list");
+                $("#event_content").load("eventcontents/" + $(this).text() + ".html");
+            });
+
+
+            $(".cube>div").click(function () {
+
+            });
+
+        })
+
+
+    </script>
+    </body>
+   
+     
+
+
